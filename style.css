@@ -1,1 +1,24 @@
+* { margin: 0;
+   padding: 0;
+
+
+}
+.cabecalho{
+   padding: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: oklch(65.012% 0.01388 229.252);
+}
+.cartao{
+   width: 260px;
+   height: 200px;
+}
+.cartao-imagem{
+   width: 100%;
+}
+body{
+   display:  ;
+}
+
 
