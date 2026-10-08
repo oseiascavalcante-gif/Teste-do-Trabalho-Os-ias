@@ -1,100 +1,68 @@
-* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { margin: 0;
+  padding: 0;
+
+
+
+
+}
+.cabecalho{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: oklch(65.012% 0.01388 229.252);
+}
+.cartao{
+  width: 260px;
+  height: 200px;
+}
+.cartao-imagem{
+  width: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(247, 242, 242);
+}
+main{
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.cabecalho-link{
+   color:aliceblue;
+   text-decoration: none;  
+}
+h1{
+   color: aliceblue;
+   font-size: 24px;
+}
+footer{
+   background-color: rgb(8, 3, 32);
+   padding: 15px 25px;
+   color: lightblue;
+}
+.cartao-interno{
+   position: relative;
+   transition: transform 0.8s;
+   transform-style: preserve-3d;
+}
+.cartao-hover .cartao-interno{
+   transform: rotateY(180deg);
+}
+.cartao-frente, .cartao-verso{
+  position:absolute;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba;
+  backface-visibility: hidden;
+}
+.cartao-verso{
+   transform: rotateY(180deg);
+}
+section{
+   display: flex;
+   gap: 16px;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: rgb(247, 242, 242);
-}
-
-.cabecalho {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: oklch(65.012% 0.01388 229.252);
-}
-
-.cabecalho-link {
-    color: aliceblue; 
-    text-decoration: none;   
-}
-
-h1 {
-    color: aliceblue;
-    font-size: 24px;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-section {
-    display: flex;
-    gap: 16px;
-}
-
-/* --- CONFIGURAÇÃO DO CARTÃO 3D --- */
-
-.cartao {
-    width: 260px;
-    height: 280px; /* Ajustado para caber imagem + texto */
-    perspective: 1000px; /* Cria a sensação de profundidade 3D */
-}
-
-.cartao-interno {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-/* Quando passar o mouse sobre .cartao, gira a .cartao-interno */
-.cartao:hover .cartao-interno {
-    transform: rotateY(180deg);
-}
-
-.cartao-frente, .cartao-verso {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Corrigido o valor do rgba */
-    backface-visibility: hidden; 
-    background-color: #fff;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.cartao-verso {
-    transform: rotateY(180deg);
-}
-
-.cartao-imagem {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-footer {
-    background-color: rgb(8, 3, 32);
-    padding: 15px 25px;
-    color: lightblue;
-}
