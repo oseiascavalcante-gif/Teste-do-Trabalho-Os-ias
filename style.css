@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: rgb(247, 242, 242);
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
 }
 
 .cabecalho {
@@ -41,40 +41,41 @@ main {
 
 section {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 16px;
 }
 
-/* --- EFEITO DE GIRO 3D (AQUI ESTÁ A MÁGICA) --- */
+/* --- EFEITO DOS CARTÕES --- */
 
 .cartao {
   width: 260px;
-  height: 300px;
-  perspective: 1000px; /* Ativa o efeito 3D no contêiner */
+  height: 280px;
+  perspective: 1000px; /* Habilita a profundidade 3D */
 }
 
 .cartao-interno {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s; /* Velocidade do giro */
-  transform-style: preserve-3d; /* Permite rotação em 3D */
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-/* Faz o cartão girar 180 graus quando passa o mouse por cima */
+/* Gira o cartão ao passar o mouse */
 .cartao:hover .cartao-interno {
   transform: rotateY(180deg);
 }
 
 .cartao-frente, .cartao-verso {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  backface-visibility: hidden; /* Esconde o lado oposto ao girar */
-  background-color: #fff;
-  padding: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Corrigida a sintaxe da sombra */
+  backface-visibility: hidden; /* Esconde a parte de trás quando girada */
+  background-color: #ffffff;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,12 +84,12 @@ section {
 }
 
 .cartao-verso {
-  transform: rotateY(180deg); /* O verso já começa virado de costas */
+  transform: rotateY(180deg); /* O verso começa já virado */
 }
 
 .cartao-imagem {
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
   border-radius: 8px;
 }
